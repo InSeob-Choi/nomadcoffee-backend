@@ -10,7 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Coffee {
-  id    Int    @id @default(autoincrement())
-  brand String
+model User {
+  id             Int     @default(autoincrement())
+  username       String  @unique
+  email          String  @unique
+  name           String
+  location       String
+  password       String
+  avatarURL      String
+  githubUsername String?
 }
